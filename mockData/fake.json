@@ -1,0 +1,20 @@
+[{
+    "id":"Seo",
+    "name":"서명인",
+    "money":255
+},
+{
+    "id":"Lee",
+    "name":"이영표",
+    "money":75
+},
+{
+    "id":"Park",
+    "name":"박지성",
+    "money":125
+},
+{
+    "id":"Kim",
+    "name":"김두현",
+    "money":320
+}]
