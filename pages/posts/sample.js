@@ -1,6 +1,16 @@
 import Link from "next/link";
 import Button from '@mui/material/Button';
 
+export async function getServerSideProps() {
+    const res = await fetch('http://localhost:3000/api/apitemplate');
+    const data = await res.json()
+    return {
+        props: {
+            user_data: data
+        },
+    }
+}
+
 export default function Sample({ user_data }) {
     return (
         <>
@@ -21,12 +31,3 @@ export default function Sample({ user_data }) {
     );
 }
 
-export async function getServerSideProps() {
-    const res = await fetch('http://localhost:3000/api/apitemplate');
-    const data = await res.json()
-    return {
-        props: {
-            user_data: data
-        },
-    }
-}
