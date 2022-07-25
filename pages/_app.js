@@ -8,6 +8,7 @@ import lightTheme from '../styles/theme/lightTheme';
 import { wrapper } from "../store";
 import '../styles/globals.css'
 import PropTypes from 'prop-types';
+import Container from '@mui/material/Container';
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -16,10 +17,12 @@ const MyApp = (props) => {
   return <>
     <CacheProvider value={emotionCache}>
       <ThemeProvider theme={lightTheme}>
-        <CssBaseline />
-        <Header></Header>
-        <Component {...pageProps} />
-        <Footer></Footer>
+        <Container maxWidth="md">
+          <CssBaseline />
+          <Header></Header>
+          <Component {...pageProps} />
+          <Footer></Footer>
+        </Container>
       </ThemeProvider>
     </CacheProvider>
   </>
