@@ -1,11 +1,10 @@
+import styles from '/styles/Home.module.css'
 
-import styles from '../styles/Home.module.css'
-
-export default function About() {
+export default function Resume() {
     return (
         <div className={styles.container}>
             <main className={styles.main}>
-                하하하
+                레쥬메
             </main>
         </div>
     )
