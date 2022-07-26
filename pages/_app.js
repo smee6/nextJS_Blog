@@ -5,7 +5,6 @@ import { CacheProvider } from '@emotion/react';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import createEmotionCache from '../utility/createEmotionCache';
 import lightTheme from '../styles/theme/lightTheme';
-import { wrapper } from "../store";
 import '../styles/globals.css'
 import PropTypes from 'prop-types';
 import Container from '@mui/material/Container';
@@ -31,7 +30,7 @@ const MyApp = (props) => {
   </>
 }
 
-export default wrapper.withRedux(MyApp)
+export default MyApp;
 
 MyApp.propTypes = {
   Component: PropTypes.elementType.isRequired,

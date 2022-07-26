@@ -4,7 +4,7 @@ export default function Guestbook() {
     return (
         <div className={styles.container}>
             <div className={styles.menutitle}>
-                GUEST BOOK
+                방명록
             </div>
             <main className={styles.main}>
                 Guest book

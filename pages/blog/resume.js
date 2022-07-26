@@ -4,7 +4,7 @@ export default function Resume() {
     return (
         <div className={styles.container}>
             <div className={styles.menutitle}>
-                RESUME
+                이력서
             </div>
             <main className={styles.main}>
                 레쥬메
