@@ -123,10 +123,27 @@
   margin-left: 0.5rem;
 }
 
+.showMenu {
+  display: none;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+
+  .hideMenu {
+    display: none;
+  }
+
+  .showMenu {
+    display: block;
+    margin-top: 0.8rem;
+  }
+
+  .showMenu a {
+    cursor: pointer;
   }
 }
 
