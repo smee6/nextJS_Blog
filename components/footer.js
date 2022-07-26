@@ -4,7 +4,7 @@ export default function Footer() {
     return (
         <>
             <footer className={styles.footer}>
-                🎁서명인 개발 블로그
+                Copyright © 🎁 서명인 2022. All rights reserved.
             </footer>
         </>
     );
