@@ -13,6 +13,7 @@ export default function Guestbook() {
 
     return (
         <div className={styles.container}>
+
             <div className={styles.menutitle}>
                 방명록
             </div>

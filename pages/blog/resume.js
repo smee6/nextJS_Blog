@@ -7,6 +7,7 @@ export default function Resume() {
                 이력서
             </div>
             <main className={styles.main}>
+                
             </main>
             <br />
         </div>
