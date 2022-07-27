@@ -14,7 +14,21 @@ export default function Project() {
                      꼭 챙겨야 할 개념들을 링크로 첨부하여 검색 시간 낭비를 최대한 줄일 수 있게 도와주는 프로젝트를 하고 있습니다.`}
                     link={'https://github.com/smee6/JS_FrontEnd'}
                 />
-
+                <ProjectBox type={''}
+                    title={''}
+                    content={``}
+                    link={''}
+                />
+                <ProjectBox type={''}
+                    title={''}
+                    content={``}
+                    link={''}
+                />
+                <ProjectBox type={''}
+                    title={''}
+                    content={``}
+                    link={''}
+                />
             </main>
         </div>
     )
