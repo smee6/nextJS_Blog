@@ -125,6 +125,12 @@
   display: none;
 }
 
+/* .comment {
+  background-color: #fafafa;
+  border-radius: 10px;
+} */
+
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
@@ -145,15 +151,14 @@
   }
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
+
   .card,
   .footer {
     border-color: #222;
   }
+
   .code {
     background: #111;
   }
-  .logo img {
-    filter: invert(1);
-  }
-} */
+}

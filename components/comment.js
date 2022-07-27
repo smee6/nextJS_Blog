@@ -8,9 +8,9 @@ export default function Comment({ repo }) {
         const attributes = {
             src: "https://utteranc.es/client.js",
             repo,
-            "issue-term": "pathname",
-            label: "comment",
-            theme: "github-light", //다크 테마
+            "issue-term": "title",
+            label: "Guest Book",
+            theme: "github-light",
             crossorigin: "anonymous",
             async: "true",
         };
@@ -20,4 +20,5 @@ export default function Comment({ repo }) {
         containerRef.current.appendChild(utterances);
     }, []);
     return <div id="comment" ref={containerRef} />;
+
 }
