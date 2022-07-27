@@ -1,0 +1,1108 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>이타적 프론트엔드 개발자</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			text-indent: -1.7em;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-opaquegray {
+			background-color: rgba(255, 255, 255, 0.0375);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="697852d6-8b4c-4075-ab49-e20333d4df60" class="page sans">
+		<header>
+			<h1 class="page-title">이타적 프론트엔드 개발자</h1>
+		</header>
+		<div class="page-body">
+			<div id="12158dd1-f3fc-45e8-8dfd-e9a35ed6116b" class="column-list">
+				<div id="d2db0462-e209-452b-a0f6-a7cc9e4a6319" style="width:50%" class="column">
+					<figure id="701b90b0-9d26-4ae5-93ef-92a7492137e7" class="image"><a
+							href="%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A1%E1%84%8C%E1%85%A5%E1%86%A8%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AB%E1%84%90%E1%85%B3%E1%84%8B%E1%85%A6%E1%86%AB%E1%84%83%E1%85%B3%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%8C%E1%85%A1%20701b90b09d264ae593ef92a7492137e7/%25EC%25A0%259C%25EB%25AA%25A9%25EC%259D%2584_%25EC%259E%2585%25EB%25A0%25A5%25ED%2595%25B4%25EC%25A3%25BC%25EC%2584%25B8%25EC%259A%2594_-001.png"><img
+								style="width:288px"
+								src="%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A1%E1%84%8C%E1%85%A5%E1%86%A8%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AB%E1%84%90%E1%85%B3%E1%84%8B%E1%85%A6%E1%86%AB%E1%84%83%E1%85%B3%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%8C%E1%85%A1%20701b90b09d264ae593ef92a7492137e7/%25EC%25A0%259C%25EB%25AA%25A9%25EC%259D%2584_%25EC%259E%2585%25EB%25A0%25A5%25ED%2595%25B4%25EC%25A3%25BC%25EC%2584%25B8%25EC%259A%2594_-001.png" /></a>
+					</figure>
+				</div>
+				<div id="36d36441-59ae-4da9-97e1-8c69d9603f35" style="width:50%" class="column">
+					<p id="dbeefb64-0b89-4e3a-824b-d2d803134a0e" class="">
+					</p>
+					<p id="72d144a3-d96a-4c41-915c-00ba140be806" class="">
+					</p>
+					<p id="4fbda040-dda7-4641-9b4d-266f338df993" class="">🚀 <strong>Name </strong>서명인 SEO</p>
+					<p id="1245a845-956a-491b-99ed-50dc04d82eda" class="">📄 <strong>Blog </strong><a
+							href="https://codegosu.tistory.com/">https://codegosu.tistory.com</a></p>
+					<p id="37c5240a-104a-4f96-a323-f1971d4ed063" class="">🤝 <strong>Github </strong><a
+							href="https://github.com/smee6">https://github.com/smee6</a></p>
+				</div>
+			</div>
+			<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex"
+				id="cae8be22-70c1-4774-a225-ae7472528808">
+				<div style="font-size:1.5em"><span class="icon">💡</span></div>
+				<div style="width:100%">대학시절 온라인 커뮤니티 창업을 하며 개발을 시작하게 되었습니다. 개발을 통해 인생의 꿈을 이룰 수 있다고 믿는 개발자 입니다.</div>
+			</figure>
+			<p id="dd2278b3-bab2-4ef2-9002-0ee804348ed0" class="">
+			</p>
+			<blockquote id="bb923213-b2b0-466a-be3c-264628d54d00" class="">온라인 커뮤니티 서비스에 관심이 많습니다. 직접 커뮤니티를 운영하고 개발하며 얻은
+				인사이트를 바탕으로 개발과 비지니스 사이에서 두마리 토끼를 잡고 싶습니다. 개발을 통해서 제가 가진 다른 꿈들도 이룰 수 있다고 믿는 개발자 입니다.</blockquote>
+			<p id="366f944f-09c4-432d-aacd-5def5aedc92b" class="">
+			</p>
+			<h2 id="d41a1ee6-dc13-49d7-b48d-5992bf24a191" class="block-color-blue_background">🤖Introduce</h2>
+			<hr id="e22b70c3-158d-4653-9b73-4aa2dfdb2435" />
+			<p id="6e536335-a171-4976-b9de-498754f7a3a2" class="">
+			</p>
+			<p id="421e9aba-0e82-4346-9acd-bd76d48e087b" class="">학부때 우연히 학내 커뮤니티를 만든것이 개발의 씨앗이 되어 프로그래머의 길을 걷게 되었습니다.
+			</p>
+			<p id="9461b5d7-3381-4aac-a474-dfe18edbe6d6" class="">단순히 개발에만 매몰된 개발자가 아니라 개발을 통해 산출 할 수 있는 비즈니스적 가치와 전체
+				조직에서의 나의 업무 플로우 위치를 잘 알고있는 개발자가 되고 싶습니다. </p>
+			<p id="42897040-61b2-42c5-95f1-7e6631bf713f" class="">스타트업 비즈니스에 관심이 많으며 새로운 기술을 탐색하는것을 즐깁니다.</p>
+			<p id="f81f4e38-7c02-4326-8643-2e80a7dae106" class="">최근 프론트엔드 기술이 다양해 지면서 공부 할 거리들이 많이 생겨 그것들을 적극적으로 캐치업 하기
+				위해 노력하고 있습니다.</p>
+			<p id="5cc8d18c-1b5a-4136-ae4d-f2ccd183b524" class="">개발 외에도 작곡이나 그래픽 디자인에도 관심이 있어 실제로 시간이 나면 작품을 만들고는 합니다.
+			</p>
+			<p id="5fbfe20c-092e-4693-bc44-e20b80992aa5" class="">항상 즐겁게 일하며 구성원간 자유롭고 친절한 커뮤니케이션의 구축을 업무의 가장 중요한 가치로
+				여깁니다.</p>
+			<p id="583f4444-2d2d-4674-aaf3-8e2e5fd6178e" class="">
+			</p>
+			<h2 id="c0b22e9d-98ec-4e72-996e-de3b67da880e" class="block-color-red_background">💻Developer Experience</h2>
+			<hr id="5d65ddfc-db38-442e-b71a-7d297d5c3bd5" />
+			<p id="ea2caf71-c6b7-4296-a158-9a1a15caa359" class="">
+			</p>
+			<ul id="7fab1e08-1117-4787-8d40-1d5f7b7d0e19" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>몽타(주) / 웹 개발자</strong>
+					<p id="43c5db81-699d-4e19-a035-02f60a48fc39" class="">2021.10 - 2022.4</p>
+				</li>
+			</ul>
+			<p id="0185e623-92f1-49c7-89fa-fe5629e3fd8b" class="">
+			</p>
+			<ul id="7984539b-f9ce-40a1-a9be-1ecab658dc5a" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>비트스타 / 프론트엔드 개발자</strong>
+					<p id="2b879725-81f2-4951-bef3-f689d594eea6" class="">2022.4 - 현재</p>
+					<p id="723a3ed5-4217-43ca-9d3f-5d2d2a7ba770" class="">
+					</p>
+				</li>
+			</ul>
+			<h2 id="a1946217-2e3c-423b-97de-407bb2aa081c" class="block-color-pink_background">🎡Work Project</h2>
+			<hr id="4bbdfdf1-cebc-49f9-aceb-8770b5846e2f" />
+			<p id="d5f050fb-d112-4f92-bf97-d1baac355498" class="">
+			</p>
+			<ul id="66a0a663-1a92-4731-9688-acfd87d6de2d" class="bulleted-list">
+				<li style="list-style-type:disc">몽타 <strong>Mes 화면 전환 프로젝트</strong>
+					<p id="a7bc77e5-2059-49d7-97b7-81a4a8ad0d6e" class=""><strong>2021.11 - 2022.5</strong></p>
+					<p id="5add85a5-e71f-407c-922a-7ddb5cb0cd90" class="">미라콤 INC 솔루션 화면전환 프로젝트에서 개발자로 활동했습니다. 기존 레거시
+						코드를 바닐라 자바스크립트 기반 사내빌더로 전환하는 작업을 하였습니다.</p>
+					<p id="868702ac-e54d-4b5b-b637-6cb4f041003a" class="">REST API 화면 연동, Amchart 차트 생성</p>
+					<ul id="774c4383-64d9-4e70-a80d-10049447e9e1" class="bulleted-list">
+						<li style="list-style-type:circle">Js,React,사내 자체 빌더,JIRA,Confluence,Slack</li>
+					</ul>
+					<ul id="89365a38-2987-4162-86d1-23af4e7c9945" class="bulleted-list">
+						<li style="list-style-type:circle">기여도 : 프로젝트 12명 투입, (1/12)%</li>
+					</ul>
+				</li>
+			</ul>
+			<p id="0787168c-ed87-42e7-9235-40933aa447bf" class="">
+			</p>
+			<ul id="2f9647e5-1c08-4083-bffe-7bf135b3a12c" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>비트스타 채굴기 솔루션 메인 페이지/어드민 페이지 제작</strong>
+					<p id="651b7969-47c3-44af-a322-c91fccf5cbb9" class=""><strong>2022.4 - </strong></p>
+					<p id="74be4c6f-bea1-40e0-843b-a1b4f3e434a7" class="">블록체인 토큰을 이용한 채굴기 구매 솔루션 프론트엔드 담당
+						(nodeJS,express,JS,EJS,PM2)</p>
+					<p id="d77f2657-dc3e-4a48-9295-9f9363838399" class="">채굴장비 주문 관리와 고객 관리를 위한 어드민 시스템 프론트엔드
+						담당(nodeJS,express,JS,EJS,PM2)</p>
+					<p id="cd8b613b-8952-4a88-a6b7-bef7a872acdc" class="">프로젝트 구축,환경변수 설정,PM2 배포/운영,인증 미들웨어 생성</p>
+					<p id="51b7d6e6-c5e3-45bf-8fda-d1aad47a89de" class="">회원가입,로그인 기능,게시판,페이징,대쉬보드,인증 시스템,NICE 연동 본인인증
+					</p>
+					<p id="454a2cfc-54c7-44bf-a40b-57d30ab8d783" class="">라우팅,Multer 파일첨부,동적 테이블 생성 등 구현,Backend API 화면
+						연동</p>
+					<ul id="d3014d32-b8dd-4eb9-8865-7d042d8ecba4" class="bulleted-list">
+						<li style="list-style-type:circle">기여도 : 100% (프론트엔드 전체 담당)</li>
+					</ul>
+					<p id="2c32b779-3a1a-46dc-af00-f65bacbc48d3" class="">
+					</p>
+				</li>
+			</ul>
+			<h2 id="23b5a798-2aec-411d-aada-85f271d6581a" class="block-color-gray_background">🖼Personal Project</h2>
+			<hr id="e17b1a3e-ac2a-4fb5-ab7d-3151c228283c" />
+			<p id="16c48140-c3fc-429a-949b-4d86f20c2c42" class="">
+			</p>
+			<ul id="1bce0839-b047-4f3d-a96d-b74f80f94042" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>서울과기대 과기인 커뮤니티 개발,운영 (2015 ~ 2019)</strong>
+					<p id="964178ba-ddea-4340-9d50-6f29d05c8020" class="">서울과기대 온라인 커뮤니티 과기인을 설립하여 3년정도 서비스를 지속하였습니다.
+					</p>
+					<p id="4b65ccc6-6c50-4227-b542-0b7bdae74f08" class="">폐쇄 전 가입자 8000명+</p>
+					<p id="d3a9f550-47d2-4a2f-a084-77dc8fa0bb12" class="">수강신청 기간 월간 최대 뷰 100만을 달성하며 교내 최대 온라인 커뮤니티로 자리
+						잡았습니다.</p>
+					<p id="330b028d-abfd-4247-b989-cd302fe7c461" class="">실패 이유 : 안정적인 영역에 계속 머물다보니 모바일 전환의 타이밍을 놓쳤고,
+						에브리타임과 같은 커뮤니티 어플리케이션에 점유율이 크게 밀리게 되었습니다. 내부적으로도 1인 운영의 한계상 절대적 관리시간이 부족하여 관리 소홀로 폐쇄를 결정하게
+						되었습니다.</p>
+					<p id="f0e7c91f-c769-49a5-88f8-e70f10869813" class=""><a
+							href="https://www.notion.so/Portfolio-3357232c9e4a4e6dbc185848cac3f3c7">https://seo93.notion.site/Portfolio-3357232c9e4a4e6dbc185848cac3f3c7</a>
+						(문서링크)</p>
+					<p id="367265a1-ed6c-4e0a-80df-aabe1092c777" class="">지금은 포트폴리오 참고자료용으로 작성했던 사이트 기획에 관련된 문서가 남아있습니다.
+					</p>
+					<ul id="b22e48d9-a9b2-4070-acaf-f2d0b2a7714c" class="bulleted-list">
+						<li style="list-style-type:circle">php,그누보드,웹 호스팅(dothome)</li>
+					</ul>
+				</li>
+			</ul>
+			<p id="66f396dd-7749-4442-82c8-4e4b51f880ad" class="">
+			</p>
+			<ul id="c91b795c-3bc0-4d63-8b87-4665e54d7b55" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>주니어를 위한 자바스크립트 면접 질문 오픈소스 (Github Repo)</strong>
+					<p id="6d35dd31-7218-4b69-9793-b47f08352e28" class="">깃허브 레포지토리로 주니어 개발자 면접을 위한 프론트엔드 질문을 아카이빙 하고
+						있습니다. 또 면접 질문 외에도 주니어 수준에서 꼭 챙겨야 할 개념들을 링크로 구성하여 이직이나 취업준비시에 불필요한 시간낭비를 최대한 줄일 수 있게 도와주는 프로젝트를
+						하고 있습니다. 비전공자로 개발을 시작하면서 초기 정보 수집에 시간을 많이 소모한 기억이 있어서 기획하게 되었습니다.</p>
+					<figure id="f5097ef3-a653-46ab-ac84-5df80dabb0a4">
+						<div class="source">https://github.com/smee6/JS_FrontEnd</div>
+					</figure>
+					<p id="66bf286d-97ec-494b-abe7-76a4c2008195" class="">프로젝트 깃허브 레포지토리 링크입니다.</p>
+					<p id="ebe6f8c4-731e-4c8e-89f1-903fe5da5c8b" class="">
+					</p>
+				</li>
+			</ul>
+			<h2 id="73090ef2-9ce4-4a81-9cae-a8767a9a49d7" class="block-color-brown_background">🏗Skills</h2>
+			<hr id="f3b46378-e2ef-4674-b901-00109166acea" />
+			<p id="b41d81d5-d92a-4f28-b1bd-58ec81a19693" class="">
+			</p>
+			<h3 id="03162e98-f525-4517-bc0a-652221be513a" class=""><strong>IT and Web</strong></h3>
+			<p id="60b1d115-41a4-4090-aa73-1418c24aa6cd" class="">
+			</p>
+			<ul id="ea22413a-8086-4ea5-b938-62da39532177" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Javascript,HTML5,CSS</strong>
+					<p id="3f19cbf2-853e-4a22-a98e-8d8afc224bd7" class="">ES6 문법을 이용하여 백엔드 API를 활용한 프론트엔드 로직을 설계 의도에 맞게
+						구현할 수 있습니다. </p>
+					<p id="013809b6-b979-49c2-ac59-53acb9bb6c5e" class="">api요청시엔 거의 Axios를 이용하고 로직에 Map이나 filter같은
+						배열메소드를 사용하는 것을 좋아합니다. SSR을 할때 RESTful한 BFF를 짜려고 노력을 하고 있습니다.</p>
+					<p id="f4425087-cb3c-4b95-97b2-839a71fdf330" class="">백엔드에서 받은 자료를 조작하여 프론트엔드에서 바닐라 자바스크립트로 로직을 처리하는
+						것이나 Promise를 통한 동기/비동기 통신에 익숙합니다. </p>
+				</li>
+			</ul>
+			<p id="4bf043e0-48ca-4af6-8d11-b1a310345abf" class="">
+			</p>
+			<ul id="866817c4-b5b7-4559-b119-4d09252ae7dc" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>NodeJS,Express</strong>
+					<p id="0ddfff02-d0ab-4d66-80c1-46a38273b234" class="">Express를 이용하여 View단에서 EJS나 Vanilla JS를 이용한 SSR
+						페이지를 수월하게 구현할 수 있습니다.</p>
+					<p id="723eca0b-bd0f-4295-ae87-cc8c2caa8c4c" class="">Express단에서 BFF로 로직 처리를 해서 클라이언트에서 비즈니스 로직 노출을
+						줄였습니다.</p>
+					<p id="5934521a-9568-4d0f-b3fe-77efe324d57e" class="">npm을 이용하여 적절한 라이브러리를 받아 필요한 기능을 구현할 수 있습니다.
+					</p>
+					<p id="225d5153-88f7-461c-a23d-c8da8085f6fa" class="">mongoDB Atlas Web DB와 ODM(Mongoose) 를 이용하여
+						Express 위에서 간단한 Backend를 구현 할 수 있습니다.</p>
+					<p id="e205571e-9eb5-4bad-a0ba-22ef70a9bb07" class="">PM2를 이용해 테스트 서버 내에서 무중단 서비스를 구현한 경험이 있습니다.</p>
+				</li>
+			</ul>
+			<p id="ca0a7e91-5c40-4c66-91a0-37eb8e1b7a98" class="">
+			</p>
+			<ul id="b55bd761-f30b-4c3f-8bda-809c3f84c7f9" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>NextJS,ReactJS</strong>
+					<p id="a0fa33e0-5ffd-46f0-92dd-d283b479dcfb" class="">기본적인 React문법을 익힌 뒤에 NextJS로 넘어와서 개인 프로젝트를 제작하고
+						있습니다.</p>
+					<p id="e7218894-6120-47ea-a794-898d5d33c900" class="">최근 BFF(Backend for Frontend Design Pattern)에
+						관심이 생겨서 간단한 페이지도 React보다 Next로 구성하는 것을 선호합니다.</p>
+					<p id="eaf29dfa-29f7-4b87-9783-f6a32daf5b17" class="">iron-session을 이용하여 세션관리를 하고 있습니다.</p>
+					<p id="de14c395-6d66-4289-830b-88ebbc1f6afb" class="">Redux-toolkit을 이용하여 상태관리를 하고 있습니다.</p>
+					<p id="a663aee6-1b45-466b-bdbf-c1f7e9d5371d" class="">토이 프로젝트를 할때마다 반복적으로 라이브러리 셋팅하는것이 비효율적인것 같아
+						피로감을 느끼던 차에 보일러 플레이트 제작에 관심이 생겼습니다. 그래서 최근에는 NextJs + Mui5 + iron-session + Redux
+						(toolkit,next-wrapper)을 셋팅해둔 보일러 플레이트를 만들어서 토이 프로젝트를 진행할 때 이용하고 있습니다. 또 여기 사용한 라이브러리들 만큼은 잘 이해하고
+						싶어 추가적으로 자료를 모으고 있습니다.</p>
+					<p id="7d6aa70f-314e-4a73-8383-3c1b563d5ee0" class="">
+					</p>
+				</li>
+			</ul>
+			<h3 id="e77f4bce-734e-491a-b848-89894cfb8cef" class="">Other</h3>
+			<p id="3c86d427-8912-44d6-9e4e-ff5403a27caf" class="">
+			</p>
+			<ul id="b5019f32-3b9f-40f1-bae8-c7af60df53ac" class="bulleted-list">
+				<li style="list-style-type:disc">그래픽 디자인 (앨범아트를 제작하여 스트리밍 사이트에 발매한 경험이 있습니다.)</li>
+			</ul>
+			<p id="d24bcd4f-9c01-4296-9ff1-94265e8ee319" class="">
+			</p>
+			<ul id="6ce185b2-f1b7-4429-9679-68519dfc0e85" class="bulleted-list">
+				<li style="list-style-type:disc">작곡 (샘플링과 시퀀싱을 통해서 노래를 만들 수 있습니다.)</li>
+			</ul>
+			<p id="c67e3f2f-1901-4f4c-a41c-1872f6cfa86a" class="">
+			</p>
+			<h2 id="e34b82a4-33f2-4dd9-b439-3e77daa43af3" class="block-color-yellow_background">🚅Experience</h2>
+			<hr id="5095ce90-4308-47d2-9bf4-aa6b4aa10282" />
+			<p id="4af2f5d3-670e-4f33-a957-9f37986eb91c" class="">
+			</p>
+			<ul id="a57053b2-06b0-4b64-a573-5d7e4a153ea5" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>과기인 서울과기대 온라인 커뮤니티 창업 </strong>(2016.1 ~ 2020.8)<p
+						id="f2911a1f-8878-42b0-8cb1-e2c6ba1097ac" class="">개발,운영,대표 </p>
+				</li>
+			</ul>
+			<p id="402292c6-0f4f-4d7b-b5a5-475407d2eb86" class="">
+			</p>
+			<ul id="f66d46e8-d620-4db5-9dbe-c1c24e13fcdf" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>그린웹서비스</strong> / <strong>서비스 운영 </strong>(2020.1 - 2020.3)<p
+						id="8ff1b56b-a2d7-4891-844e-5c717076ee18" class="">네이버 V LIVE 서비스 저작권 관리/운영</p>
+					<p id="cca17ca7-5eae-4a91-8dd3-9079592b5bd2" class="">V LIVE 보유 영상물 유튜브,페이스북,VK등 모니터링 하여 저작권 대응</p>
+					<ul id="7ce54dc7-4f4c-47b0-b0ea-e46fe2d25bd8" class="bulleted-list">
+						<li style="list-style-type:circle">Excel,자체 Tool </li>
+					</ul>
+					<p id="d975b657-4371-4a71-95b3-86aef6d293e3" class="">
+					</p>
+				</li>
+			</ul>
+			<ul id="03b0863c-8d41-4c57-9b52-b37bf571d2f2" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>필더필</strong> / <strong>서비스기획 인턴 </strong>(2020.12 - 2021.1)<p
+						id="718079f2-141d-4357-bed2-37705b773587" class="">커뮤니티 사이트 레이아웃 기획</p>
+					<p id="54450c00-131c-43e7-8c3c-83b702d712b7" class="">스타트업 커뮤니티 사이트 초기 기획, 스토리보드 작성, Idealization
+						진행.</p>
+					<ul id="01f83f84-7a3c-4bad-93de-0b424ed790a7" class="bulleted-list">
+						<li style="list-style-type:circle">Notion,MS Powerpoint,Oven</li>
+					</ul>
+				</li>
+			</ul>
+			<p id="567eb1d9-a047-4cf3-a9ee-afdd3bef5738" class="">
+			</p>
+			<ul id="7165ad6a-e119-4e0c-b72c-f6247e842d79" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>성모의집 공부방 지역 아동 센터 </strong>(2014 - 2017)<p
+						id="096f1e6a-c570-4801-9441-3259a24440a5" class="">청소년 교육 봉사 활동 </p>
+				</li>
+			</ul>
+			<p id="643ecb84-422c-43b3-ae6c-f1a28155bc64" class="">
+			</p>
+			<ul id="c0234d72-65ab-49cd-baef-40e829b5bdc6" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>HSE Russia 러시아 고등경제 대학교 여름방문학생 </strong>(2018.7 - 2018.8)</li>
+			</ul>
+			<p id="849200a8-09aa-413d-b228-79351dde6cdf" class="">
+			</p>
+			<ul id="50329170-c48f-418d-9ece-efa6787e0e10" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Universitas Indonesia 인도네시아 국립대학교 교환학생 </strong>(2018.8 -
+					2019.1)</li>
+			</ul>
+			<p id="39338999-8dd1-479b-a6d6-2d606cd41d12" class="">
+			</p>
+			<ul id="562bf622-5210-4351-bbc6-32668496f65c" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>인도네시아 국립대학교 한국어 동아리 자원교사</strong></li>
+			</ul>
+			<p id="c8a65af0-7fa3-4e14-9f59-93843c741a0b" class="">
+			</p>
+			<ul id="9cd5661d-a6d5-4039-b8a6-79def80384b0" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>서울과기대 중앙 유도동아리 회장 </strong>(2019.2 ~ 2019.12)<p
+						id="fca73001-b8de-4809-a00d-6ef13da9c3c1" class="">팀 리더, 서울컵 유도대회 참가 </p>
+				</li>
+			</ul>
+			<p id="2c255f3f-400b-4a3d-875c-0ed10dc0fd32" class="">
+			</p>
+			<h2 id="c1f602bb-4c40-4de2-b06e-b81e5d8cb0d9" class="block-color-red_background">🏟Education</h2>
+			<hr id="077c11c8-1462-4b6f-a5fd-0a82c76e9559" />
+			<p id="03a6b6df-52be-4188-9cb1-75139b65cbd6" class="">
+			</p>
+			<ul id="d43a5f47-b6d4-42da-8563-408095d224e6" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>서울과학기술대학교 기술경영융합대학 글로벌테크노경영 전공</strong>
+					<p id="0cda531a-52e9-4eab-a4fd-3ba07e463fd9" class="">글로벌테크노경영프로그램 전공 (학사) 2014.3 - 2020.8 졸업</p>
+					<p id="f5c70a9f-8bb2-4414-9127-cbb71dccd395" class="">
+					</p>
+				</li>
+			</ul>
+			<ul id="fbadf3ea-30f0-4c64-a43f-9898c7b16c6d" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>한양대학교 공학대학원 컴퓨터 공학 전공</strong>
+					<p id="6286f90b-9a40-4385-969d-dbf68ba5ed88" class="">공학대학원 컴퓨터공학 전공 (석사) 2022.9 - 예정</p>
+					<p id="f9ff874e-b60e-413a-99cb-d822ee8d7e21" class="">
+					</p>
+				</li>
+			</ul>
+			<p id="14c04893-4ffc-4521-b88a-ef65089be14d" class="">
+			</p>
+		</div>
+	</article>
+</body>
+
+</html>

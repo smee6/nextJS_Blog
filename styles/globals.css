@@ -15,7 +15,10 @@ a {
   box-sizing: border-box;
 }
 
-
+#nprogress .bar {
+  background: #00295f !important;
+  height: 2px !important;
+}
 
 @media (prefers-color-scheme: dark) {
   html {
