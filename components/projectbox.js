@@ -16,12 +16,12 @@ export default function ProjectBox({ title, content, link, type }) {
                         {title}
                     </Typography>
                     <Typography variant="body2">
-                        {content}
                         <br />
+                        {content}
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size="medium" href={link}>프로젝트 페이지 링크</Button>
+                    <Button size="small" color="error" href={link}>프로젝트 페이지 링크</Button>
                 </CardActions>
             </Card>
             <br />

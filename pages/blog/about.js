@@ -10,7 +10,7 @@ export default function About() {
             </div>
             <Grid container spacing={2}>
                 <Grid item xs={4}>
-                    <h3>🎆 개발왕 서명인</h3>
+                    <h3>🎆 Frontend Developer :-)</h3>
                     <div style={{ borderRadius: '5%', overflow: 'hidden' }}>
                         <Image
                             src="/seo2.jpg"
@@ -23,18 +23,12 @@ export default function About() {
                 <Grid item xs={8}>
                     <h3>[🙌 Intro]</h3>
 
-                    <li> 개발만 하는 개발자가 아닙니다.</li>
+                    <li> 개발을 통한 비지니스 가치를 만들고 싶은 개발자 입니다</li>
                     <li> 작곡과 아트 드로잉에도 관심이 많습니다.</li>
+                    <li> 블록체인 관련 스타트업에서 프론트엔드 개발을 하고 있습니다.</li>
 
                     <h3>[🛠 Skill]</h3>
                     <li>JS,NextJS,NodeJS,Express</li>
-
-                    <h3>[💻 Work]</h3>
-
-                    <li>그린웹서비스, 운영 (20.1 ~ 20.3)</li>
-                    <li>(주)필더필, 웹기획 인턴 (20.12 ~ 21.1)</li>
-                    <li>몽타(주), 웹개발 (21.10 ~ 22.04)</li>
-                    <li>비트스타, 프론트엔드 (22.04 ~ 현재)</li>
 
                     <h3>[🏆 Education]</h3>
                     <li>고려대학교 부속 고등학교 (09.3~ 12.2)</li>
