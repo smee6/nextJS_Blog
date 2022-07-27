@@ -137,6 +137,10 @@
     flex-direction: column;
   }
 
+  .container {
+    padding: 0;
+  }
+
   .hideMenu {
     display: none;
   }
