@@ -38,9 +38,9 @@ export default function Header() {
                             <Button size="large">{e.title}</Button>
                         </Link>
                     ))}
-                    <Button size="large">
+                    {/* <Button size="large">
                         {theme.palette.type === "light" ? " ☼ " : " ☾ "}
-                    </Button>
+                    </Button> */}
                 </ThemeProvider>
             </div>
             {/**
