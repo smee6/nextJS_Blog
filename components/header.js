@@ -11,15 +11,14 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import React, { useEffect } from "react";
-import useMediaQuery from '@mui/material/useMediaQuery';
 
 export default function Header() {
-    const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+
     const theme = createTheme({
         palette: {
-            type: prefersDarkMode ? 'dark' : 'light',
+            type: 'dark',
             primary: {
-                main: prefersDarkMode ? grey[100] : grey[900],
+                main: grey[100],
             },
         },
     });
@@ -57,19 +56,19 @@ export default function Header() {
                             sx={{
                                 border: 'none',
                                 boxShadow: 'none',
-                                backgroundColor: { prefersDarkMode } ? "black" : "white",
+                                backgroundColor: "black",
                                 '&:hover': {
                                     backgroundColor: 'black',
                                 },
                             }}
                         >
-                            <FontAwesomeIcon icon={faBars} size="2x" color={{ prefersDarkMode } ? "white" : "black"} />
+                            <FontAwesomeIcon icon={faBars} size="2x" color="white" />
                         </AccordionSummary>
                         <AccordionDetails>
                             <ButtonGroup
                                 orientation="vertical"
                                 aria-label="vertical contained button group"
-                                variant={{ prefersDarkMode } ? "" : "text"}
+                                variant=""
                                 fullWidth={true}
                             >
                                 {url.map((e) => (

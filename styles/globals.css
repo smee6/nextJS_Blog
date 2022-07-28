@@ -6,6 +6,15 @@ body {
   font-family: 'Nanum+Gothic+Coding', sans-serif;
 }
 
+html {
+  color-scheme: dark;
+}
+
+body {
+  color: white;
+  background: black;
+}
+
 a {
   color: inherit;
   text-decoration: none;
