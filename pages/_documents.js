@@ -8,7 +8,7 @@ export default class MyDocument extends Document {
         return (
             <Html lang="en">
                 <Head>
-                    
+
                     <link
                         rel="stylesheet"
                         href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding:400&display=swap"
