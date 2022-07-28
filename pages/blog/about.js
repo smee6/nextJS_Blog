@@ -14,7 +14,7 @@ export default function About() {
                     //get screen size
                     useMediaQuery('(min-width:768px)') ?
                         <Grid item xs={4}>
-                            <h3>🎆 서명인 : Frontend Developer</h3>
+                            <h3>🎆 서명인 : Developer</h3>
                             <div style={{ borderRadius: '5%' }}>
                                 <Image
                                     src="/seo2.jpg"
