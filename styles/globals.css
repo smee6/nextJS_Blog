@@ -20,6 +20,7 @@ a {
   height: 2px !important;
 }
 
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -29,4 +30,22 @@ a {
     color: white;
     background: black;
   }
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body.dark {
+  color: white;
+  background: black;
+}
+
+html.light {
+  color-scheme: light;
+}
+
+body.light {
+  color: black;
+  background: white;
 }

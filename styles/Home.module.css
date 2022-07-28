@@ -166,3 +166,14 @@
     background: #111;
   }
 }
+
+
+
+.card.dark,
+.footer.dark {
+  border-color: #222;
+}
+
+.code.dark {
+  background: #111;
+}

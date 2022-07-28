@@ -17,10 +17,12 @@ export default function Guestbook() {
             <div className={styles.menutitle}>
                 방명록
             </div>
+
             <CommentWrap>
                 <Comment repo="smee6/nextJS_Blog_Comment" />
                 <br />
             </CommentWrap>
+
             <br />
         </div>
     )
