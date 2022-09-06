@@ -8,6 +8,13 @@ export default function Project() {
                 사이드 프로젝트
             </div>
             <ProjectBox type={'nextJS'}
+                title={'Coderesume (2022)'}
+                content={`아직 개발중인 사이트입니다. 취업정보,개발팁,개발 질문답변등을 올리는 회원제 사이트 입니다. 
+                    CSS-in-JS(emotion), SSR, MUI5 , Mongoose , Rest API 등을 이용하여 개발중인 개발자 커뮤니티 사이트로 구상중이며
+                    80퍼센트 정도 개발이 끝났습니다.`}
+                link={'#'}
+            />
+            <ProjectBox type={'nextJS'}
                 title={'This NextJS Blog (2022)'}
                 content={`지금 이 순간 보고있는 블로그 입니다.
                     CSS-in-JS(emotion), SSR, 정적페이지, MUI5 ,컴포넌트 등을 연습하며 개발하였습니다.
