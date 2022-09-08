@@ -5,6 +5,8 @@ import Link from 'next/link';
 import Styled from '@emotion/styled'
 
 export default function Home({ posts }) {
+  const copyPost = [...posts];
+  const reversePost = copyPost.reverse();
   return (
     <div className={styles.container}>
       <div className={styles.menutitle}>
@@ -12,7 +14,7 @@ export default function Home({ posts }) {
       </div>
       <main className={styles.mainhome}>
         {
-          posts.map(post => {
+          reversePost.map(post => {
             //extract slug and frontmatter
             const { slug, frontmatter } = post
             //extract frontmatter properties
