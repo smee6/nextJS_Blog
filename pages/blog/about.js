@@ -47,7 +47,8 @@ export default function About() {
 
                             <li> 개발을 통한 비지니스 가치를 만들고 싶은 개발자 입니다</li>
                             <li> 작곡과 아트 드로잉에도 관심이 많습니다.</li>
-                            <li> 블록체인 관련 스타트업에서 프론트엔드 개발을 하고 있습니다.</li>
+                            <li> 블록체인 관련 스타트업에서 프론트엔드 개발을 경험했습니다.</li>
+                            <li> 현재 게임회사에서 웹,서버 개발을 맡고 있습니다.</li>
 
                             <h3>[🛠 Skill]</h3>
                             <li>JS,NextJS,NodeJS,Express</li>
