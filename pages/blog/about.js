@@ -27,7 +27,7 @@ export default function About() {
                         </Grid>
                         :
                         <Grid item xs={12}>
-                            <h3>🎆 서명인 : Frontend Developer</h3>
+                            <h3>🎆 서명인 : Software Developer</h3>
                             <div style={{ borderRadius: '10%', overflow: '' }}>
                                 <Image
                                     src="/seo2.jpg"
@@ -73,7 +73,7 @@ export default function About() {
                             <li> 블록체인 관련 스타트업에서 프론트엔드 개발을 하고 있습니다.</li>
 
                             <h3>[🛠 Skill]</h3>
-                            <li>JS,NextJS,NodeJS,Express</li>
+                            <li>JS,NextJS,NodeJS,Express,JAVA</li>
 
                             <h3>[🏆 Education]</h3>
                             <li>고려대학교 부속 고등학교 (09.3~ 12.2)</li>
